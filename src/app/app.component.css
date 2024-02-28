@@ -1,0 +1,15 @@
+.fx {
+  width: 20px;
+  height: 20px;
+  padding: 20px;
+}
+
+.sfx {
+  color: white;
+  background-color: red;
+}
+
+.nfx {
+  color: white;
+  background-color: blue;
+}
