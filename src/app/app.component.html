@@ -1,13 +1,27 @@
-<style>
-  
-</style>
-
-<div class="float-left">
-  <div class="fx text-center" *ngFor="let fx of listFloors; index as i" [ngClass]="{'sfx' : selectedFloor === fx, 'nfx' : hasNav(fx)}" (click)="selectedFloor = fx">{{ fx }}</div>
+<!-- <div class="float-left">
+  <div 
+    class="fx text-center" 
+    *ngFor="let fx of listFloors; index as i" 
+    [ngClass]="{'sfx' : selectedFloor === fx, 'nfx' : hasNav(fx)}" 
+    (click)="selectedFloor = fx"
+  >{{ fx }}</div>
 </div>
 
 <div>
   <img src="assets/{{ getFloor() }}.png" class="img-fluid" alt="">
+</div> -->
+
+<div class="wrapper-box">
+  <div class="floating-menu">
+    <ul>
+      <li *ngFor="let fx of listFloors; index as i" [ngClass]="{'sfx' : selectedFloor === fx, 'nfx' : hasNav(fx)}" (click)="selectedFloor = fx">
+        <a>{{ fx }}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="waypoint-image-container">
+    <img class="waypoint-image" src="assets/{{ getFloor() }}.png">
+  </div>
 </div>
 
 <router-outlet></router-outlet>

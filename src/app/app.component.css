@@ -1,15 +1,66 @@
-.fx {
+/* .fx {
   width: 20px;
   height: 20px;
   padding: 20px;
-}
+} */
 
 .sfx {
-  color: white;
-  background-color: red;
+  background-color: #337a7f;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 .nfx {
   color: white;
-  background-color: blue;
+  background-color: red;
+}
+
+.wrapper-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.floating-menu {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.waypoint-image-container {
+  max-width: 100%;
+}
+
+.floating-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.floating-menu ul li {
+  margin-bottom: 5px;
+}
+
+.floating-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 2px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.waypoint-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  padding-left: 80px;
 }
