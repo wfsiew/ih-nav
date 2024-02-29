@@ -25,7 +25,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: auto;
 }
 
 .floating-menu {
@@ -37,10 +37,6 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.waypoint-image-container {
-  max-width: 100%;
 }
 
 .floating-menu ul {
@@ -62,9 +58,18 @@
   cursor: pointer;
 }
 
+.waypoint-image-container {
+  max-width: 100%;
+}
+
 .waypoint-image {
   max-width: 100%;
   height: auto;
   display: block;
   padding-left: 50px;
+}
+
+.sw {
+  color: white;
+  background-color: #337a7f;
 }

@@ -11,6 +11,13 @@
   <img src="assets/{{ getFloor() }}.png" class="img-fluid" alt="">
 </div> -->
 
+<div class="d-flex align-items-center justify-content-center">
+  <ul class="list-group list-group-horizontal-sm">
+    <li class="list-group-item" [ngClass]="{'sw' : selectedWing === 'macalister'}" (click)="onSelectWing('macalister')">Macalister Wing</li>
+    <li class="list-group-item" [ngClass]="{'sw' : selectedWing === 'peel'}" (click)="onSelectWing('peel')">Peel Wing</li>
+  </ul>
+</div>
+
 <div class="wrapper-box">
   <div class="floating-menu">
     <ul>
@@ -20,7 +27,7 @@
     </ul>
   </div>
   <div class="waypoint-image-container">
-    <img class="waypoint-image" src="assets/{{ getFloor() }}.png">
+    <img class="waypoint-image" src="assets/{{ selectedWing }}/{{ getFloor() }}.png">
   </div>
 </div>
 
