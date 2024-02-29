@@ -33,6 +33,24 @@ export class AppComponent {
     return false;
   }
 
+  hasNavFrom(fx: string) {
+    let r = this.listNav.find(k => k.from === this.fromX);
+    if (r) {
+      return r.fx1 === fx;
+    }
+
+    return false;
+  }
+
+  hasNavTo(fx: string) {
+    let r = this.listNav.find(k => k.to === this.toX);
+    if (r) {
+      return r.fx2 === fx;
+    }
+
+    return false;
+  }
+
   getFloor() {
     let f = this.selectedFloor.toLowerCase();
     let r = this.listNav.find(k => k.from === this.fromX && k.to === this.toX);

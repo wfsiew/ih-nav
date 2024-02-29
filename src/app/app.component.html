@@ -14,7 +14,7 @@
 <div class="wrapper-box">
   <div class="floating-menu">
     <ul>
-      <li *ngFor="let fx of listFloors; index as i" [ngClass]="{'sfx' : selectedFloor === fx, 'nfx' : hasNav(fx)}" (click)="selectedFloor = fx">
+      <li *ngFor="let fx of listFloors; index as i" [ngClass]="{'sfx' : selectedFloor === fx, 'nfx1' : hasNavFrom(fx), 'nfx2' : hasNavTo(fx)}" (click)="selectedFloor = fx">
         <a>{{ fx }}</a>
       </li>
     </ul>
