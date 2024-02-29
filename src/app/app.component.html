@@ -2,11 +2,11 @@
   
 </style>
 
-<div class="float-left">
+<!-- <div class="float-left">
   <div class="fx text-center" *ngFor="let fx of listFloors; index as i" [ngClass]="{'sfx' : selectedFloor === fx, 'nfx' : hasNav(fx)}" (click)="selectedFloor = fx">{{ fx }}</div>
-</div>
+</div> -->
 
-<div class="container">
+<div>
   <img src="assets/{{ getFloor() }}.png" class="img-fluid" alt="">
 </div>
 

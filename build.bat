@@ -1,1 +1,1 @@
-ng build --base-href /ih-nav/
+ng build --base-href https://wfsiew.github.io/ih-nav/ --output-path docs
