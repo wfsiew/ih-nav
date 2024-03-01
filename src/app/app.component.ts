@@ -14,13 +14,13 @@ export class AppComponent {
   selectedWing = 'macalister';
   listFloors = ['GF', '1F', '2F', '3F', '5F', '7F', '8F'];
   selectedFloor = 'GF';
-  fromX = 'Registration';
-  toX = 'Cafeteria';
+  fromX = 'GF - Registration';
+  toX = '2F - Cafeteria';
 
   listNav = [
     {
-      from: 'Registration',
-      to: 'Cafeteria',
+      from: 'GF - Registration',
+      to: '2F - Cafeteria',
       fx1: 'GF',
       fx2: '2F',
       im1: 'x1',
@@ -28,8 +28,8 @@ export class AppComponent {
       w: 'macalister'
     },
     {
-      from: 'Registration',
-      to: 'Accident & Emergency',
+      from: 'GF - Registration',
+      to: 'GF - Accident & Emergency',
       fx1: 'GF',
       fx2: 'GF',
       im1: 'x3',
@@ -38,8 +38,8 @@ export class AppComponent {
     }
   ];
 
-  availableFromValue = ['Registration'];
-  availableToValue = ['Cafeteria', 'Accident & Emergency']
+  availableFromValue = ['GF - Registration'];
+  availableToValue = ['2F - Cafeteria', 'GF - Accident & Emergency']
 
   constructor(private modalService: NgbModal) {}
 
