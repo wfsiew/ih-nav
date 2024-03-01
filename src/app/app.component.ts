@@ -14,8 +14,8 @@ export class AppComponent {
   selectedWing = 'macalister';
   listFloors = ['GF', '1F', '2F', '3F', '5F', '7F', '8F'];
   selectedFloor = 'GF';
-  fromX = 'GF - Registration';
-  toX = '2F - Cafeteria';
+  fromX = '';
+  toX = '';
 
   listNav = [
     {
