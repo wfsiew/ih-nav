@@ -73,3 +73,8 @@
   color: white;
   background-color: #00585f;
 }
+
+.nav-search {
+  display: block;
+  width: 100%;
+}
