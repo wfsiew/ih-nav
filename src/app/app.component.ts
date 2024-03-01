@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SearchModalComponent } from './shared/components/search-modal/search-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +27,11 @@ export class AppComponent {
       w: 'macalister'
     }
   ];
+
+  availableFromValue = ['Registration'];
+  availableToValue = ['Cafeteria']
+
+  constructor(private modalService: NgbModal) {}
 
   hasNav(fx: string) {
     let r = this.listNav.find(k => k.from === this.fromX && k.to === this.toX);
@@ -80,5 +87,23 @@ export class AppComponent {
       this.listFloors = ['BF', '1F', '2F', '3F', '3AF', '5F', '6F', '7F'];
       this.selectedFloor = 'BF';
     }
+  }
+
+  onSearch() {
+    const initialState = {
+      title: 'Directions',
+      message: `Get live navigational directions to your destinations`,
+      from: this.availableFromValue,
+      to: this.availableToValue
+    };
+    const modalRef = this.modalService.open(SearchModalComponent);
+    modalRef.componentInstance.data = initialState;
+    modalRef.result.then((data) => {
+      if (data) {
+        // will get fromSearch and toSearch from modal if data is not undefined or null
+        console.log(data);
+        // do search here
+      }
+    });
   }
 }
