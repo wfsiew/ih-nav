@@ -110,11 +110,8 @@ export class AppComponent {
     modalRef.componentInstance.data = initialState;
     modalRef.result.then((data) => {
       if (data) {
-        // will get fromSearch and toSearch from modal if data is not undefined or null
-        console.log(data);
         this.fromX = data.fromSearch;
-        this.toX = data.toSearch
-        // do search here
+        this.toX = data.toSearch;
       }
     });
   }

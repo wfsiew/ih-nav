@@ -6,10 +6,9 @@
     </button>
   </div>
   <div class="modal-body">
-    <p class="text-center">{{ data.message }}</p>
     <p class="text-center"><b>Where are you now?</b></p>
     <p class="text-center">
-      <select class="form-control" [(ngModel)]="fromSearchTxt">
+      <select class="form-select" [(ngModel)]="fromSearchTxt">
         <option *ngFor="let from of data.from">{{ from }}</option>
       </select>
     </p>
@@ -17,7 +16,7 @@
       <b>Where would like to go?</b>
     </p>
     <p class="text-center">
-      <select class="form-control" [(ngModel)]="toSearchTxt">
+      <select class="form-select" [(ngModel)]="toSearchTxt">
         <option *ngFor="let to of data.to">{{ to }}</option>
       </select>
     </p>
