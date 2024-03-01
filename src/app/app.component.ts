@@ -39,7 +39,7 @@ export class AppComponent {
   ];
 
   availableFromValue = ['GF - Registration'];
-  availableToValue = ['2F - Cafeteria', 'GF - Accident & Emergency']
+  availableToValue = ['GF - Accident & Emergency', '2F - Cafeteria'];
 
   constructor(private modalService: NgbModal) {}
 
