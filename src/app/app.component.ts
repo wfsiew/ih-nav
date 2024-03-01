@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SearchModalComponent } from './shared/components/search-modal/search-modal.component';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -25,11 +26,20 @@ export class AppComponent {
       im1: 'x1',
       im2: 'x2',
       w: 'macalister'
+    },
+    {
+      from: 'Registration',
+      to: 'Accident & Emergency',
+      fx1: 'GF',
+      fx2: 'GF',
+      im1: 'x3',
+      im2: 'x3',
+      w: 'macalister'
     }
   ];
 
   availableFromValue = ['Registration'];
-  availableToValue = ['Cafeteria']
+  availableToValue = ['Cafeteria', 'Accident & Emergency']
 
   constructor(private modalService: NgbModal) {}
 
@@ -102,6 +112,8 @@ export class AppComponent {
       if (data) {
         // will get fromSearch and toSearch from modal if data is not undefined or null
         console.log(data);
+        this.fromX = data.fromSearch;
+        this.toX = data.toSearch
         // do search here
       }
     });
