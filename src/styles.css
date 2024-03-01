@@ -3,10 +3,12 @@
   background-color: #00585F;
   border-color: #00585F;
   box-shadow: none;
+  height: 48px;
+  border-radius: 24px;
 }
 
 .btn-custom:hover {
   color: #fff;
   background-color: #337a7f; 
-  border-color: 	#337a7f;
+  border-color: #337a7f;
 }
