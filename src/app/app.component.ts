@@ -53,7 +53,7 @@ export class AppComponent {
   }
 
   hasNavFrom(fx: string) {
-    let r = this.listNav.find(k => k.from === this.fromX && this.selectedWing === 'macalister');
+    let r = this.listNav.find(k => k.from === this.fromX && this.selectedWing === k.w);
     if (r) {
       return r.fx1 === fx;
     }
@@ -62,7 +62,7 @@ export class AppComponent {
   }
 
   hasNavTo(fx: string) {
-    let r = this.listNav.find(k => k.to === this.toX && this.selectedWing === 'macalister');
+    let r = this.listNav.find(k => k.to === this.toX && this.selectedWing === k.w);
     if (r) {
       return r.fx2 === fx;
     }
@@ -112,6 +112,10 @@ export class AppComponent {
       if (data) {
         this.fromX = data.fromSearch;
         this.toX = data.toSearch;
+        let r = this.listNav.find(k => k.from === this.fromX && this.selectedWing === k.w);
+        if (r) {
+          this.selectedFloor = r.fx1;
+        }
       }
     });
   }
