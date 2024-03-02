@@ -70,7 +70,7 @@ export class AppComponent {
     return false;
   }
 
-  getFloor() {
+  get floor() {
     let f = this.selectedFloor.toLowerCase();
     let r = this.listNav.find(k => k.from === this.fromX && k.to === this.toX && k.w === this.selectedWing);
     if (r) {
