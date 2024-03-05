@@ -12,7 +12,7 @@ export class AppComponent {
 
   title = 'mynav';
   selectedWing = 'macalister';
-  listFloors = ['GF', '1F', '2F', '3F', '5F', '7F', '8F'];
+  listFloors = ['8F', '7F', '5F', '3F', '2F', '1F', 'GF'];
   selectedFloor = 'GF';
   fromX = '';
   toX = '';
