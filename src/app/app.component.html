@@ -18,8 +18,12 @@
   </div>
 </div>
 
+<ngx-scanner-qrcode #action="scanner" style="display: none;"></ngx-scanner-qrcode>
+
 <div class="d-flex flex-row align-items-center justify-content-center">
   <button type="button" class="btn btn-custom nav-search" (click)="onSearch()">Search</button>
+  <button type="button" class="btn btn-custom nav-search" (click)="action.isStart ? action.stop() : action.start()">{{action.isStart ? 'Stop Scan' : 'Scan QR'}}</button>
 </div>
+<span>{{ action.data.value | json }}</span><!-- value -->
 
 <router-outlet></router-outlet>

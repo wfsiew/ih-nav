@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SearchModalComponent } from './shared/components/search-modal/search-modal.component';
-import { from } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -118,5 +117,9 @@ export class AppComponent {
         }
       }
     });
+  }
+
+  onScan() {
+
   }
 }
