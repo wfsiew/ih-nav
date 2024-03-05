@@ -6,9 +6,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchModalComponent } from './shared/components/search-modal/search-modal.component';
 import { FormsModule } from '@angular/forms';
-import { NgxScannerQrcodeModule, LOAD_WASM } from 'ngx-scanner-qrcode';
-
-LOAD_WASM().subscribe();
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 @NgModule({
   declarations: [
@@ -20,7 +18,7 @@ LOAD_WASM().subscribe();
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    NgxScannerQrcodeModule
+    ZXingScannerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

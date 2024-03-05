@@ -18,12 +18,11 @@
   </div>
 </div>
 
-<ngx-scanner-qrcode #action="scanner" style="display: none;"></ngx-scanner-qrcode>
+<!-- <zxing-scanner [formats]="allowedFormats" (scanSuccess)="onCodeResult($event)"></zxing-scanner> -->
 
 <div class="d-flex flex-row align-items-center justify-content-center">
-  <button type="button" class="btn btn-custom nav-search" (click)="onSearch()">Search</button>
-  <button type="button" class="btn btn-custom nav-search" (click)="action.isStart ? action.stop() : action.start()">{{action.isStart ? 'Stop Scan' : 'Scan QR'}}</button>
+  <button type="button" class="btn btn-custom nav-search btn-x" (click)="onSearch()">Search</button>
+  <!-- <button type="button" class="btn btn-custom nav-search" (click)="onScan()">Scan QR</button> -->
 </div>
-<span>{{ action.data.value | json }}</span><!-- value -->
 
 <router-outlet></router-outlet>
