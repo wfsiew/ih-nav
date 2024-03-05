@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SearchModalComponent } from './shared/components/search-modal/search-modal.component';
-import { BarcodeFormat } from '@zxing/library';
+import { NgxScannerQrcodeComponent } from 'ngx-scanner-qrcode';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +16,7 @@ export class AppComponent {
   selectedFloor = 'GF';
   fromX = '';
   toX = '';
-  qrResultString: string = '';
-  allowedFormats = [ BarcodeFormat.QR_CODE, BarcodeFormat.EAN_13, BarcodeFormat.CODE_128, BarcodeFormat.DATA_MATRIX /*, ...*/ ];
+  started = false;
 
   listNav = [
     {
@@ -122,12 +121,13 @@ export class AppComponent {
     });
   }
 
-  onScan() {
-
+  onScan(action: NgxScannerQrcodeComponent) {
+    action.start();
+    this.started = true;
   }
 
-  onCodeResult(resultString: string) {
-    this.qrResultString = resultString;
-    console.log(resultString)
+  onStop(action: NgxScannerQrcodeComponent) {
+    action.stop();
+    this.started = false;
   }
 }
