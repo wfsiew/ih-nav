@@ -14,7 +14,11 @@ export class SearchModalComponent implements OnInit {
 
   constructor(public activeModal: NgbActiveModal) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.data.fromPath) {
+      this.fromSearchTxt = this.data.fromPath;
+    }
+  }
 
   onDismiss() {
     this.activeModal.close();

@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SearchModalComponent } from './shared/components/search-modal/search-modal.component';
-import { NgxScannerQrcodeComponent } from 'ngx-scanner-qrcode';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   title = 'mynav';
   selectedWing = 'macalister';
@@ -16,7 +16,7 @@ export class AppComponent {
   selectedFloor = 'GF';
   fromX = '';
   toX = '';
-  started = false;
+  fromPath: any;
 
   listNav = [
     {
@@ -42,7 +42,21 @@ export class AppComponent {
   availableFromValue = ['GF - Registration'];
   availableToValue = ['GF - Accident & Emergency', '2F - Cafeteria'];
 
-  constructor(private modalService: NgbModal) {}
+  constructor(
+    private modalService: NgbModal, 
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+    this.route.paramMap.subscribe({
+      next: params => {
+        this.fromPath = params.get('from');
+        if (this.fromPath) {
+          this.onSearch();
+        }
+      }
+    });
+  }
 
   hasNav(fx: string) {
     let r = this.listNav.find(k => k.from === this.fromX && k.to === this.toX);
@@ -105,8 +119,9 @@ export class AppComponent {
       title: 'Directions',
       message: `Get live navigational directions to your destinations`,
       from: this.availableFromValue,
-      to: this.availableToValue
+      to: this.availableToValue,
     };
+    if (this.fromPath) { Object.assign(initialState, { fromPath: this.fromPath }) };
     const modalRef = this.modalService.open(SearchModalComponent);
     modalRef.componentInstance.data = initialState;
     modalRef.result.then((data) => {
@@ -119,15 +134,5 @@ export class AppComponent {
         }
       }
     });
-  }
-
-  onScan(action: NgxScannerQrcodeComponent) {
-    action.start();
-    this.started = true;
-  }
-
-  onStop(action: NgxScannerQrcodeComponent) {
-    action.stop();
-    this.started = false;
   }
 }
