@@ -48,12 +48,10 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.paramMap.subscribe({
-      next: params => {
-        this.fromPath = params.get('from');
-        if (this.fromPath) {
-          this.onSearch();
-        }
+    this.route.queryParams.subscribe(params => {
+      this.fromPath = params['from'];
+      if (this.fromPath) {
+        this.onSearch();
       }
     });
   }
@@ -126,9 +124,11 @@ export class AppComponent implements OnInit {
     modalRef.componentInstance.data = initialState;
     modalRef.result.then((data) => {
       if (data) {
+        console.log(data)
         this.fromX = data.fromSearch;
         this.toX = data.toSearch;
         let r = this.listNav.find(k => k.from === this.fromX && this.selectedWing === k.w);
+        console.log(r)
         if (r) {
           this.selectedFloor = r.fx1;
         }
